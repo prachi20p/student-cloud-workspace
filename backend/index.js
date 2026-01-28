@@ -10,6 +10,9 @@ app.use(express.json());
 const noteRoutes = require("./routes/noteRoutes");
 app.use("/notes", noteRoutes);
 
+const taskRoutes = require("./routes/taskRoutes");
+app.use("/tasks", taskRoutes);
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
