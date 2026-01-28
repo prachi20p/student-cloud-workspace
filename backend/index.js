@@ -13,6 +13,14 @@ app.use("/notes", noteRoutes);
 const taskRoutes = require("./routes/taskRoutes");
 app.use("/tasks", taskRoutes);
 
+const fileRoutes = require("./routes/fileRoutes");
+app.use("/files", fileRoutes);
+
+app.use("/uploads", express.static("uploads"));
+
+app.use("/uploads", express.static("uploads"));
+app.use("/files", fileRoutes);
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
